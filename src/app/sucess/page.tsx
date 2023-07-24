@@ -1,4 +1,5 @@
 import { SucessIcon } from "../../../public/sucessIcon";
+import Link from "next/link";
 
 export default function SucessPage() {
   return (
@@ -10,12 +11,17 @@ export default function SucessPage() {
         </h1>
         <p>
           A confiormation email has been sent to <br />{" "}
-          <span className="font-bold">email</span>. Please open it and click{" "}
-          <br /> the button inside to confirm your subscription.{" "}
+          <span className="font-bold">
+            {process.env.REACT_APP_EMAIL || "email"}
+          </span>
+          . Please open it and click <br /> the button inside to confirm your
+          subscription.{" "}
         </p>
-        <button className="rounded-lg bg-neutral-dark py-4 text-center font-bold text-neutral-white">
-          Dismiss message
-        </button>
+        <Link href={"/"} className="w-full">
+          <button className="w-full rounded-lg bg-neutral-dark py-4 text-center font-bold text-neutral-white transition-all duration-150 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-400 hover:shadow-xl hover:shadow-pink-300">
+            Dismiss message
+          </button>
+        </Link>
       </div>
     </main>
   );

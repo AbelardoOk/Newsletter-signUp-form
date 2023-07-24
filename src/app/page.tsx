@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { ListIcon } from "../../public/listIcon";
 import { useState } from "react";
+import Link from "next/link";
+
 export default function Home() {
   const [email, setEmail] = useState("");
   const [validated, setValidated] = useState(false);
@@ -39,38 +41,47 @@ export default function Home() {
             </li>
           </ul>
 
-          <form className="flex flex-col gap-6" action="">
-            <div className="flex flex-col gap-2">
-              {validated == true || email == "" ? (
-                <label className="text-xs font-bold" htmlFor="email">
-                  Email adress
-                </label>
-              ) : (
-                <div className="flex flex-row justify-between text-xs font-bold">
-                  <label htmlFor="email">Email adress</label>
-                  <p className="text-primary-tomato">Valid email required</p>
-                </div>
-              )}
+          <div className="flex flex-col gap-2">
+            {validated == true || email == "" ? (
+              <label className="text-xs font-bold" htmlFor="email">
+                Email adress
+              </label>
+            ) : (
+              <div className="flex flex-row justify-between text-xs font-bold">
+                <label htmlFor="email">Email adress</label>
+                <p className="text-primary-tomato">Valid email required</p>
+              </div>
+            )}
 
-              <input
-                className="rounded-lg border-[1px] border-neutral-grey p-4 text-left transition duration-300 invalid:border-primary-tomato invalid:bg-red-100 invalid:text-primary-tomato focus:border-neutral-dark disabled:bg-neutral-white"
-                type="email"
-                name="email"
-                id="email"
-                onChange={emailValidation}
-                value={email}
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                placeholder="email@company.com"
-              />
-            </div>
+            <input
+              className="rounded-lg border-[1px] border-neutral-grey p-4 text-left transition duration-300 invalid:border-primary-tomato invalid:bg-red-100 invalid:text-primary-tomato focus:border-neutral-dark disabled:bg-neutral-white"
+              type="email"
+              name="email"
+              id="email"
+              onChange={emailValidation}
+              value={email}
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              placeholder="email@company.com"
+            />
+          </div>
 
+          {email == "" || validated == false ? (
             <button
               className="rounded-lg bg-neutral-dark py-4 text-center font-bold text-neutral-white transition-all duration-150 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-400 hover:shadow-xl hover:shadow-pink-300"
               type="submit"
             >
               Subscribe to monthly newsletter
             </button>
-          </form>
+          ) : (
+            <Link href={"/sucess"} className="w-full">
+              <button
+                className="w-full rounded-lg bg-neutral-dark py-4 text-center font-bold text-neutral-white transition-all duration-150 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-400 hover:shadow-xl hover:shadow-pink-300"
+                type="submit"
+              >
+                Subscribe to monthly newsletter
+              </button>
+            </Link>
+          )}
         </div>
 
         <Image
