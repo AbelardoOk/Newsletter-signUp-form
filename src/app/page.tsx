@@ -3,7 +3,7 @@ import { ListIcon } from "../../public/listIcon";
 export default function Home() {
   return (
     <main className="flex h-screen items-center justify-center bg-neutral-charcoal">
-      <div className="flex flex-row items-center rounded-3xl bg-neutral-white">
+      <div className="flex flex-row items-center rounded-3xl bg-neutral-white shadow-xl">
         <div className="flex h-max flex-col gap-6 p-16">
           <h1 className="text-6xl font-bold">Stay updated!</h1>
           <p>Join 60,000+ product manager receiving monthly updates on:</p>
