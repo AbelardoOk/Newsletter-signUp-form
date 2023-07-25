@@ -24,7 +24,7 @@ export function MobilePage() {
   }, [email]);
 
   return (
-    <main className="h-h-full flex flex-col bg-neutral-white">
+    <main className="flex h-full flex-col bg-neutral-white">
       <Image
         className="h-fit w-screen"
         src="illustration-sign-up-mobile.svg"
