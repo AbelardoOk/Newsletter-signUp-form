@@ -20,7 +20,7 @@ export function MobilePage() {
   };
 
   return (
-    <main className="flex h-screen flex-col bg-neutral-white">
+    <main className="h-h-full flex flex-col bg-neutral-white">
       <Image
         className="h-fit w-screen"
         src="illustration-sign-up-mobile.svg"
