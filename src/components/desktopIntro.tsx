@@ -24,8 +24,8 @@ export function DesktopPage() {
 
   return (
     <main className="flex h-screen items-center justify-center bg-neutral-charcoal">
-      <div className="flex flex-row items-center rounded-3xl bg-neutral-white shadow-xl">
-        <div className="flex h-max flex-col gap-6 p-16">
+      <div className="m-6 flex flex-row items-center overflow-hidden rounded-3xl bg-neutral-white shadow-xl sm:m-8">
+        <div className="flex h-max flex-col gap-6 p-12 sm:p-16">
           <h1 className="text-6xl font-bold">Stay updated!</h1>
           <p>Join 60,000+ product manager receiving monthly updates on:</p>
           <ul className="flex flex-col gap-2">
@@ -56,7 +56,7 @@ export function DesktopPage() {
             )}
 
             <input
-              className="rounded-lg border-[1px] border-neutral-grey p-4 text-left transition duration-300 invalid:border-primary-tomato invalid:bg-red-100 invalid:text-primary-tomato focus:border-neutral-dark disabled:bg-neutral-white"
+              className="rounded-lg border-[1px] border-neutral-grey p-4 text-left text-sm transition duration-300 invalid:border-primary-tomato invalid:bg-red-100 invalid:text-primary-tomato focus:border-neutral-dark disabled:bg-neutral-white sm:text-base"
               type="email"
               name="email"
               id="email"
@@ -69,7 +69,7 @@ export function DesktopPage() {
 
           {email == "" || validated == false ? (
             <button
-              className="rounded-lg bg-neutral-dark py-4 text-center font-bold text-neutral-white transition-all duration-150 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-400 hover:shadow-xl hover:shadow-pink-300"
+              className="rounded-lg bg-neutral-dark py-4 text-center text-sm font-bold text-neutral-white transition-all duration-150 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-400 hover:shadow-xl hover:shadow-pink-300 lg:text-base"
               type="submit"
             >
               Subscribe to monthly newsletter
@@ -77,7 +77,7 @@ export function DesktopPage() {
           ) : (
             <Link href={"/sucess"} className="w-full">
               <button
-                className="w-full rounded-lg bg-neutral-dark py-4 text-center font-bold text-neutral-white transition-all duration-150 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-400 hover:shadow-xl hover:shadow-pink-300"
+                className="w-full rounded-lg bg-neutral-dark py-4 text-center text-sm font-bold text-neutral-white transition-all duration-150 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-400 hover:shadow-xl hover:shadow-pink-300 lg:text-base"
                 type="submit"
               >
                 Subscribe to monthly newsletter

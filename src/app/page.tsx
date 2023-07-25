@@ -8,7 +8,7 @@ export default function Home() {
   const { innerWidth } = useWindowSize();
   return (
     <main>
-      {innerWidth !== null && innerWidth > 768 ? (
+      {innerWidth !== null && innerWidth > 580 ? (
         <DesktopPage />
       ) : (
         <MobilePage />
