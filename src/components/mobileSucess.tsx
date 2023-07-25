@@ -1,7 +1,18 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { SucessIcon } from "../../public/sucessIcon";
 import Link from "next/link";
 
 export function MobileSucess() {
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const email: string = localStorage.getItem("email") || "";
+    if (email) {
+      setEmail(email);
+    }
+  }, []);
   return (
     <main className="flex h-screen flex-col justify-between bg-neutral-white font-sans text-base text-neutral-dark">
       <div className="mt-[50%] flex -translate-y-1/4 flex-col justify-center gap-6 p-6">

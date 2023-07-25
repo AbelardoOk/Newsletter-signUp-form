@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
 import { ListIcon } from "../../public/listIcon";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export function MobilePage() {
   const [email, setEmail] = useState("");
   const [validated, setValidated] = useState(false);
 
-  const emailValidation = (e) => {
+  const emailValidation = (e: any) => {
     var pattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
     var emailValue = e.target.value;
     setEmail(emailValue);
@@ -18,6 +18,10 @@ export function MobilePage() {
       setValidated(false);
     }
   };
+
+  useEffect(() => {
+    localStorage.setItem("email", JSON.stringify(email));
+  }, [email]);
 
   return (
     <main className="h-h-full flex flex-col bg-neutral-white">

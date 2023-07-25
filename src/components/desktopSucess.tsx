@@ -1,7 +1,19 @@
+"use client";
+
 import Link from "next/link";
 import { SucessIcon } from "../../public/sucessIcon";
+import { useEffect, useState } from "react";
 
 export function DesktopSucess() {
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const email: string = localStorage.getItem("email") || "";
+    if (email) {
+      setEmail(email);
+    }
+  }, []);
+
   return (
     <main className="flex h-screen items-center justify-center bg-neutral-charcoal font-sans text-base text-neutral-dark">
       <div className="flex flex-col gap-8 rounded-3xl bg-neutral-white p-12 shadow-xl">
@@ -11,9 +23,7 @@ export function DesktopSucess() {
         </h1>
         <p>
           A confiormation email has been sent to <br />{" "}
-          <span className="font-bold">
-            {process.env.REACT_APP_EMAIL || "email"}
-          </span>
+          <span className="font-bold">{email}</span>
           . Please open it and click <br /> the button inside to confirm your
           subscription.{" "}
         </p>
